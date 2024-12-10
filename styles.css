@@ -1,0 +1,92 @@
+html, body {
+  margin: 0;
+  display: flex;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;  /* Prevent scrolling */
+  font-family: 'Press Start 2P', cursive; /* Retro pixel font, load from Google Fonts or locally */
+  background-color: #303030; /* Dark background to contrast with the game container */
+}
+
+/* Game Container */
+#game-container {
+  position: relative;         /* Align relative to the viewport */
+  border: 30px solid #333;     /* 30px solid border acting as a barrier */
+  width: calc(100% - 60px);    /* Subtracting border width from full width */
+  height: calc(100vh - 60px);  /* Subtracting border height from full height */
+  background-image: url(./assets/backgrounds/Postapocalypce2/Bright/postapocalypse2.png);  /* Background color for the game area */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;           /* Ensure elements don't overflow outside the game area */
+  box-sizing: content-box; /* Ensure borders are included in dimensions */
+}
+/* Menu Container */
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 50px; /* Offset from top */
+}
+
+/* Menu Buttons */
+.menu-button {
+  width: 220px;
+  padding: 20px 0;
+  margin: 15px;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffcc66, #d4852c); /* Pixel-like gradient */
+  border: 4px solid #704214;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 0; /* Keep it sharp for pixelated feel */
+  cursor: pointer;
+  user-select: none;
+  image-rendering: pixelated;
+  transition: background 0.3s, transform 0.1s;
+}
+
+/* Hover and Active Effects */
+.menu-button:hover {
+  background: linear-gradient(to bottom, #ffd480, #e09034);
+}
+
+.menu-button:active {
+  transform: translateY(2px); /* Pixelated button press effect */
+}
+
+/* Add Pixelated Effect for Elements */
+.pixelated {
+  image-rendering: pixelated;
+}
+
+/* Adding a Shadow Effect for a Pixelated Vibe */
+.menu-button {
+  box-shadow: 4px 4px 0 #40392f, 8px 8px 0 #222; /* Blocky shadows */
+}
+
+.player {
+    width: 30px;
+    height: 30px;
+    background-color: #00ff00; /* Default color */
+    border: 2px solid #333;
+    image-rendering: pixelated;
+}
+
+.hit-effect {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
